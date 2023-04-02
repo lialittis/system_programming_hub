@@ -54,3 +54,9 @@ dkms.conf
 __MACOSX
 *.zip
 
+# Symbols
+tags
+
+# Permission denied
+perf.data
+perf.data.old
