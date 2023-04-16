@@ -1,0 +1,37 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 103  of event 'cycles'
+# Event count (approx.): 99748089
+#
+# Overhead  Command   Shared Object      Symbol                                                    
+# ........  ........  .................  ..........................................................
+#
+    19.00%  add_base  add_base           [.] main
+    18.24%  add_base  add_base           [.] std::__fill_n_a<float*, unsigned long, float>
+    10.86%  add_base  libc-2.31.so       [.] __random_r
+    10.83%  add_base  libc-2.31.so       [.] __random
+     9.88%  add_base  add_base           [.] add_base
+     8.99%  add_base  add_base           [.] std::vector<float, std::allocator<float> >::operator[]
+     6.29%  add_base  libc-2.31.so       [.] rand
+     5.62%  add_base  [kernel.kallsyms]  [k] clear_page_erms
+     2.31%  add_base  libc-2.31.so       [.] __strrchr_avx2
+     1.13%  add_base  ld-2.31.so         [.] do_lookup_x
+     1.10%  add_base  [kernel.kallsyms]  [k] cgroup_rstat_updated
+     1.03%  add_base  [kernel.kallsyms]  [k] __cgroup_throttle_swaprate
+     0.98%  add_base  [kernel.kallsyms]  [k] page_counter_try_charge
+     0.95%  add_base  [kernel.kallsyms]  [k] irqentry_exit
+     0.90%  add_base  add_base           [.] 0x0000000000001104
+     0.90%  add_base  [kernel.kallsyms]  [k] page_remove_rmap
+     0.90%  add_base  [kernel.kallsyms]  [k] zap_pte_range.isra.0
+     0.09%  add_base  ld-2.31.so         [.] _dl_relocate_object
+     0.01%  add_base  [kernel.kallsyms]  [k] update_blocked_averages
+     0.01%  add_base  [kernel.kallsyms]  [k] next_uptodate_page
+     0.00%  perf-exe  [kernel.kallsyms]  [k] native_write_msr
+
+
+#
+# (Cannot load tips.txt file, please install perf!)
+#

@@ -1,0 +1,39 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 100  of event 'cycles'
+# Event count (approx.): 95098856
+#
+# Overhead  Command  Shared Object      Symbol                                                    
+# ........  .......  .................  ..........................................................
+#
+    18.03%  add_sse  libc-2.31.so       [.] __random
+    17.99%  add_sse  libc-2.31.so       [.] __random_r
+    13.07%  add_sse  add_sse            [.] std::__fill_n_a<float*, unsigned long, float>
+    12.26%  add_sse  add_sse            [.] main
+     6.63%  add_sse  add_sse            [.] std::vector<float, std::allocator<float> >::operator[]
+     5.66%  add_sse  libc-2.31.so       [.] rand
+     5.65%  add_sse  add_sse            [.] add_sse
+     4.08%  add_sse  [kernel.kallsyms]  [k] asm_exc_page_fault
+     2.14%  add_sse  libc-2.31.so       [.] _dl_addr
+     1.88%  add_sse  add_sse            [.] 0x0000000000001104
+     1.83%  add_sse  [kernel.kallsyms]  [k] clear_page_erms
+     1.61%  add_sse  [kernel.kallsyms]  [k] handle_mm_fault
+     1.52%  add_sse  [kernel.kallsyms]  [k] do_anonymous_page
+     1.44%  add_sse  [kernel.kallsyms]  [k] __handle_mm_fault
+     1.16%  add_sse  ld-2.31.so         [.] _dl_lookup_symbol_x
+     1.12%  add_sse  [kernel.kallsyms]  [k] up_read
+     1.02%  add_sse  [kernel.kallsyms]  [k] sync_regs
+     1.01%  add_sse  [kernel.kallsyms]  [k] page_add_new_anon_rmap
+     0.94%  add_sse  [kernel.kallsyms]  [k] __mod_zone_page_state
+     0.94%  add_sse  [kernel.kallsyms]  [k] zap_pte_range.isra.0
+     0.01%  add_sse  [kernel.kallsyms]  [k] _raw_spin_trylock
+     0.01%  add_sse  ld-2.31.so         [.] do_lookup_x
+     0.00%  perf-ex  [kernel.kallsyms]  [k] native_write_msr
+
+
+#
+# (Cannot load tips.txt file, please install perf!)
+#
