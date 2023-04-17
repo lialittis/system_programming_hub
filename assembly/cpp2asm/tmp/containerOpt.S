@@ -1,0 +1,751 @@
+	.file	"container.cpp"
+# GNU C++17 (Ubuntu 9.4.0-1ubuntu1~20.04.1) version 9.4.0 (x86_64-linux-gnu)
+#	compiled by GNU C version 9.4.0, GMP version 6.2.0, MPFR version 4.0.2, MPC version 1.1.0, isl version isl-0.22.1-GMP
+
+# GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+# options passed:  -imultiarch x86_64-linux-gnu -D_GNU_SOURCE container.cpp
+# -mtune=generic -march=x86-64 -auxbase-strip tmp/containerOpt.S -O3
+# -std=c++17 -fomit-frame-pointer -fverbose-asm
+# -fasynchronous-unwind-tables -fstack-protector-strong -Wformat
+# -Wformat-security -fstack-clash-protection -fcf-protection
+# options enabled:  -fPIC -fPIE -faggressive-loop-optimizations
+# -falign-functions -falign-jumps -falign-labels -falign-loops
+# -fassume-phsa -fasynchronous-unwind-tables -fauto-inc-dec
+# -fbranch-count-reg -fcaller-saves -fcode-hoisting
+# -fcombine-stack-adjustments -fcommon -fcompare-elim -fcprop-registers
+# -fcrossjumping -fcse-follow-jumps -fdefer-pop
+# -fdelete-null-pointer-checks -fdevirtualize -fdevirtualize-speculatively
+# -fdwarf2-cfi-asm -fearly-inlining -feliminate-unused-debug-types
+# -fexceptions -fexpensive-optimizations -fforward-propagate
+# -ffp-int-builtin-inexact -ffunction-cse -fgcse -fgcse-after-reload
+# -fgcse-lm -fgnu-runtime -fgnu-unique -fguess-branch-probability
+# -fhoist-adjacent-loads -fident -fif-conversion -fif-conversion2
+# -findirect-inlining -finline -finline-atomics -finline-functions
+# -finline-functions-called-once -finline-small-functions -fipa-bit-cp
+# -fipa-cp -fipa-cp-clone -fipa-icf -fipa-icf-functions -fipa-icf-variables
+# -fipa-profile -fipa-pure-const -fipa-ra -fipa-reference
+# -fipa-reference-addressable -fipa-sra -fipa-stack-alignment -fipa-vrp
+# -fira-hoist-pressure -fira-share-save-slots -fira-share-spill-slots
+# -fisolate-erroneous-paths-dereference -fivopts -fkeep-static-consts
+# -fleading-underscore -flifetime-dse -floop-interchange
+# -floop-unroll-and-jam -flra-remat -flto-odr-type-merging -fmath-errno
+# -fmerge-constants -fmerge-debug-strings -fmove-loop-invariants
+# -fomit-frame-pointer -foptimize-sibling-calls -foptimize-strlen
+# -fpartial-inlining -fpeel-loops -fpeephole -fpeephole2 -fplt
+# -fpredictive-commoning -fprefetch-loop-arrays -free -freg-struct-return
+# -freorder-blocks -freorder-blocks-and-partition -freorder-functions
+# -frerun-cse-after-loop -fsched-critical-path-heuristic
+# -fsched-dep-count-heuristic -fsched-group-heuristic -fsched-interblock
+# -fsched-last-insn-heuristic -fsched-rank-heuristic -fsched-spec
+# -fsched-spec-insn-heuristic -fsched-stalled-insns-dep -fschedule-fusion
+# -fschedule-insns2 -fsemantic-interposition -fshow-column -fshrink-wrap
+# -fshrink-wrap-separate -fsigned-zeros -fsplit-ivs-in-unroller
+# -fsplit-loops -fsplit-paths -fsplit-wide-types -fssa-backprop
+# -fssa-phiopt -fstack-clash-protection -fstack-protector-strong
+# -fstdarg-opt -fstore-merging -fstrict-aliasing
+# -fstrict-volatile-bitfields -fsync-libcalls -fthread-jumps
+# -ftoplevel-reorder -ftrapping-math -ftree-bit-ccp -ftree-builtin-call-dce
+# -ftree-ccp -ftree-ch -ftree-coalesce-vars -ftree-copy-prop -ftree-cselim
+# -ftree-dce -ftree-dominator-opts -ftree-dse -ftree-forwprop -ftree-fre
+# -ftree-loop-distribute-patterns -ftree-loop-distribution
+# -ftree-loop-if-convert -ftree-loop-im -ftree-loop-ivcanon
+# -ftree-loop-optimize -ftree-loop-vectorize -ftree-parallelize-loops=
+# -ftree-partial-pre -ftree-phiprop -ftree-pre -ftree-pta -ftree-reassoc
+# -ftree-scev-cprop -ftree-sink -ftree-slp-vectorize -ftree-slsr -ftree-sra
+# -ftree-switch-conversion -ftree-tail-merge -ftree-ter -ftree-vrp
+# -funit-at-a-time -funswitch-loops -funwind-tables -fverbose-asm
+# -fversion-loops-for-strides -fzero-initialized-in-bss
+# -m128bit-long-double -m64 -m80387 -malign-stringops
+# -mavx256-split-unaligned-load -mavx256-split-unaligned-store
+# -mfancy-math-387 -mfp-ret-in-387 -mfxsr -mglibc -mieee-fp
+# -mlong-double-80 -mmmx -mno-sse4 -mpush-args -mred-zone -msse -msse2
+# -mstv -mtls-direct-seg-refs -mvzeroupper
+
+	.text
+	.p2align 4
+	.globl	_Z9arrayFuncv
+	.type	_Z9arrayFuncv, @function
+_Z9arrayFuncv:
+.LFB1877:
+	.cfi_startproc
+	endbr64	
+	subq	$424, %rsp	#,
+	.cfi_def_cfa_offset 432
+# container.cpp:16: {
+	movdqa	.LC0(%rip), %xmm0	#, vect_vec_iv_.127
+	movdqa	.LC1(%rip), %xmm2	#, tmp175
+	movq	%fs:40, %rax	# MEM[(<address-space-1> long unsigned int *)40B], tmp177
+	movq	%rax, 408(%rsp)	# tmp177, D.44716
+	xorl	%eax, %eax	# tmp177
+	movq	%rsp, %rdx	#, tmp.118
+	leaq	400(%rsp), %rcx	#, tmp174
+	movq	%rdx, %rax	# tmp.118, ivtmp.144
+	.p2align 4,,10
+	.p2align 3
+.L3:
+	movdqa	%xmm0, %xmm1	# vect_vec_iv_.127, vect_vec_iv_.127
+	addq	$16, %rax	#, ivtmp.144
+	paddd	%xmm2, %xmm0	# tmp175, vect_vec_iv_.127
+# container.cpp:20:         arr[i] = i;
+	movaps	%xmm1, -16(%rax)	# vect_vec_iv_.127, MEM[base: _89, offset: 0]
+	cmpq	%rcx, %rax	# tmp174, ivtmp.144
+	jne	.L3	#,
+	xorl	%r8d, %r8d	# <retval>
+	movq	%rdx, %rax	# tmp.118, tmp.118
+	.p2align 4,,10
+	.p2align 3
+.L2:
+# /usr/include/c++/9/bits/stl_function.h:238: 	{ return std::forward<_Tp>(__t) + std::forward<_Up>(__u); }
+	movl	4(%rax), %edx	# MEM[base: __first_33, offset: 4], MEM[base: __first_33, offset: 4]
+	movl	12(%rax), %esi	# MEM[base: __first_33, offset: 12], MEM[base: __first_33, offset: 12]
+# /usr/include/c++/9/numeric:275: 	      __first += 4;
+	addq	$16, %rax	#, tmp.118
+# /usr/include/c++/9/bits/stl_function.h:238: 	{ return std::forward<_Tp>(__t) + std::forward<_Up>(__u); }
+	addl	-16(%rax), %edx	# MEM[base: __first_33, offset: 0], tmp128
+	addl	-8(%rax), %esi	# MEM[base: __first_33, offset: 8], tmp131
+	addl	%esi, %edx	# tmp131, tmp134
+	addl	%edx, %r8d	# tmp134, <retval>
+# /usr/include/c++/9/numeric:269: 	  while ((__last - __first) >= 4)
+	movq	%rcx, %rdx	# tmp174, tmp137
+	subq	%rax, %rdx	# tmp.118, tmp137
+# /usr/include/c++/9/numeric:269: 	  while ((__last - __first) >= 4)
+	cmpq	$12, %rdx	#, tmp137
+	jg	.L2	#,
+# /usr/include/c++/9/numeric:278:       for (; __first != __last; ++__first)
+	cmpq	%rcx, %rax	# tmp174, tmp.118
+	je	.L1	#,
+	leaq	396(%rsp), %rsi	#, tmp140
+	movq	%rax, %rdx	# tmp.118, ivtmp.132
+	movabsq	$4611686018427387900, %r9	#, tmp143
+	subq	%rax, %rsi	# tmp.118, tmp141
+	shrq	$2, %rsi	#, _27
+	leaq	1(%rsi), %rdi	#, niters.115
+	testq	%r9, %rsi	# tmp143, _27
+	je	.L7	#,
+	movq	%rdi, %rsi	# niters.115, bnd.116
+	pxor	%xmm0, %xmm0	# vect__23.123
+	shrq	$2, %rsi	#, bnd.116
+	salq	$4, %rsi	#, tmp145
+	addq	%rax, %rsi	# tmp.118, _85
+	.p2align 4,,10
+	.p2align 3
+.L9:
+# /usr/include/c++/9/bits/stl_function.h:238: 	{ return std::forward<_Tp>(__t) + std::forward<_Up>(__u); }
+	paddd	(%rdx), %xmm0	# MEM[base: _82, offset: 0], vect__23.123
+	addq	$16, %rdx	#, ivtmp.132
+	cmpq	%rsi, %rdx	# _85, ivtmp.132
+	jne	.L9	#,
+	movdqa	%xmm0, %xmm1	# vect__23.123, tmp146
+	psrldq	$8, %xmm1	#, tmp146
+	paddd	%xmm1, %xmm0	# tmp146, vect__23.125
+	movdqa	%xmm0, %xmm1	# vect__23.125, tmp147
+	psrldq	$4, %xmm1	#, tmp147
+	paddd	%xmm1, %xmm0	# tmp147, vect__23.125
+	movd	%xmm0, %edx	# vect__23.125, stmp__23.124
+	addl	%edx, %r8d	# stmp__23.124, <retval>
+	movq	%rdi, %rdx	# niters.115, niters_vector_mult_vf.117
+	andq	$-4, %rdx	#, niters_vector_mult_vf.117
+	leaq	(%rax,%rdx,4), %rax	#, tmp.118
+	cmpq	%rdx, %rdi	# niters_vector_mult_vf.117, niters.115
+	je	.L1	#,
+.L7:
+# /usr/include/c++/9/numeric:278:       for (; __first != __last; ++__first)
+	leaq	4(%rax), %rdx	#, __first
+# /usr/include/c++/9/bits/stl_function.h:238: 	{ return std::forward<_Tp>(__t) + std::forward<_Up>(__u); }
+	addl	(%rax), %r8d	# *__first_50, <retval>
+# /usr/include/c++/9/numeric:278:       for (; __first != __last; ++__first)
+	cmpq	%rdx, %rcx	# __first, tmp174
+	je	.L1	#,
+# /usr/include/c++/9/numeric:278:       for (; __first != __last; ++__first)
+	leaq	8(%rax), %rdx	#, __first
+# /usr/include/c++/9/bits/stl_function.h:238: 	{ return std::forward<_Tp>(__t) + std::forward<_Up>(__u); }
+	addl	4(%rax), %r8d	# MEM[(int &)__first_50 + 4], <retval>
+# /usr/include/c++/9/numeric:278:       for (; __first != __last; ++__first)
+	cmpq	%rdx, %rcx	# __first, tmp174
+	je	.L1	#,
+# /usr/include/c++/9/numeric:278:       for (; __first != __last; ++__first)
+	leaq	12(%rax), %rdx	#, __first
+# /usr/include/c++/9/bits/stl_function.h:238: 	{ return std::forward<_Tp>(__t) + std::forward<_Up>(__u); }
+	addl	8(%rax), %r8d	# MEM[(int &)__first_50 + 8], <retval>
+# /usr/include/c++/9/numeric:278:       for (; __first != __last; ++__first)
+	cmpq	%rdx, %rcx	# __first, tmp174
+	je	.L1	#,
+# /usr/include/c++/9/bits/stl_function.h:238: 	{ return std::forward<_Tp>(__t) + std::forward<_Up>(__u); }
+	addl	12(%rax), %r8d	# MEM[(int &)__first_50 + 12], <retval>
+.L1:
+# container.cpp:23: }
+	movq	408(%rsp), %rax	# D.44716, tmp178
+	xorq	%fs:40, %rax	# MEM[(<address-space-1> long unsigned int *)40B], tmp178
+	jne	.L19	#,
+	movl	%r8d, %eax	# <retval>,
+	addq	$424, %rsp	#,
+	.cfi_remember_state
+	.cfi_def_cfa_offset 8
+	ret	
+.L19:
+	.cfi_restore_state
+	call	__stack_chk_fail@PLT	#
+	.cfi_endproc
+.LFE1877:
+	.size	_Z9arrayFuncv, .-_Z9arrayFuncv
+	.p2align 4
+	.globl	_Z20simpleSmallArrayFuncv
+	.type	_Z20simpleSmallArrayFuncv, @function
+_Z20simpleSmallArrayFuncv:
+.LFB1882:
+	.cfi_startproc
+	endbr64	
+	subq	$56, %rsp	#,
+	.cfi_def_cfa_offset 64
+# container.cpp:30:         arr[i] = i;
+	movdqa	.LC0(%rip), %xmm0	#, tmp94
+# container.cpp:26: {
+	movq	%fs:40, %rax	# MEM[(<address-space-1> long unsigned int *)40B], tmp105
+	movq	%rax, 40(%rsp)	# tmp105, D.44735
+	xorl	%eax, %eax	# tmp105
+# container.cpp:30:         arr[i] = i;
+	movaps	%xmm0, (%rsp)	# tmp94, MEM[(value_type &)&arr]
+	movdqa	.LC2(%rip), %xmm0	#, tmp95
+	movaps	%xmm0, 16(%rsp)	# tmp95, MEM[(value_type &)&arr + 16]
+# container.cpp:36:         ret += arr[i-1];
+	movdqu	-4(%rsp), %xmm0	# MEM[(value_type &)&arr + 18446744073709551612], vect_ret_14.156
+	movdqu	12(%rsp), %xmm2	# MEM[(value_type &)&arr + 12], tmp108
+	paddd	%xmm2, %xmm0	# tmp108, vect_ret_14.156
+	movdqa	%xmm0, %xmm1	# vect_ret_14.156, tmp98
+	psrldq	$8, %xmm1	#, tmp98
+	paddd	%xmm1, %xmm0	# tmp98, vect_ret_14.158
+	movdqa	%xmm0, %xmm1	# vect_ret_14.158, tmp99
+	psrldq	$4, %xmm1	#, tmp99
+	paddd	%xmm1, %xmm0	# tmp99, vect_ret_14.158
+	movd	%xmm0, %eax	# vect_ret_14.158, stmp_ret_14.157
+	addl	28(%rsp), %eax	# arr, ret
+	addl	$8, %eax	#, ret
+# container.cpp:39: }
+	movq	40(%rsp), %rdx	# D.44735, tmp106
+	xorq	%fs:40, %rdx	# MEM[(<address-space-1> long unsigned int *)40B], tmp106
+	jne	.L23	#,
+	addq	$56, %rsp	#,
+	.cfi_remember_state
+	.cfi_def_cfa_offset 8
+	ret	
+.L23:
+	.cfi_restore_state
+	call	__stack_chk_fail@PLT	#
+	.cfi_endproc
+.LFE1882:
+	.size	_Z20simpleSmallArrayFuncv, .-_Z20simpleSmallArrayFuncv
+	.p2align 4
+	.globl	_Z4funcv
+	.type	_Z4funcv, @function
+_Z4funcv:
+.LFB1886:
+	.cfi_startproc
+	endbr64	
+	subq	$56, %rsp	#,
+	.cfi_def_cfa_offset 64
+# container.cpp:46:         arr[i] = i;
+	movdqa	.LC0(%rip), %xmm0	#, tmp94
+# container.cpp:58: {
+	movq	%fs:40, %rax	# MEM[(<address-space-1> long unsigned int *)40B], tmp105
+	movq	%rax, 40(%rsp)	# tmp105, D.44753
+	xorl	%eax, %eax	# tmp105
+# container.cpp:43:     std::array<int, 10> arr{};
+	movq	$0, 32(%rsp)	#, MEM[(struct array *)&arr + 32B]
+# container.cpp:46:         arr[i] = i;
+	movaps	%xmm0, (%rsp)	# tmp94, MEM[(value_type &)&arr]
+	movdqa	.LC2(%rip), %xmm0	#, tmp95
+	movaps	%xmm0, 16(%rsp)	# tmp95, MEM[(value_type &)&arr + 16]
+# container.cpp:52:         ret += arr[i-1];
+	movdqu	-4(%rsp), %xmm0	# MEM[(value_type &)&arr + 18446744073709551612], vect_ret_10.173
+	movdqu	12(%rsp), %xmm2	# MEM[(value_type &)&arr + 12], tmp108
+	paddd	%xmm2, %xmm0	# tmp108, vect_ret_10.173
+	movdqa	%xmm0, %xmm1	# vect_ret_10.173, tmp98
+	psrldq	$8, %xmm1	#, tmp98
+	paddd	%xmm1, %xmm0	# tmp98, vect_ret_10.175
+	movdqa	%xmm0, %xmm1	# vect_ret_10.175, tmp99
+	psrldq	$4, %xmm1	#, tmp99
+	paddd	%xmm1, %xmm0	# tmp99, vect_ret_10.175
+	movd	%xmm0, %eax	# vect_ret_10.175, stmp_ret_10.174
+	addl	28(%rsp), %eax	# arr, ret
+	addl	$8, %eax	#, ret
+# container.cpp:61: }
+	movq	40(%rsp), %rdx	# D.44753, tmp106
+	xorq	%fs:40, %rdx	# MEM[(<address-space-1> long unsigned int *)40B], tmp106
+	jne	.L27	#,
+	addq	$56, %rsp	#,
+	.cfi_remember_state
+	.cfi_def_cfa_offset 8
+	ret	
+.L27:
+	.cfi_restore_state
+	call	__stack_chk_fail@PLT	#
+	.cfi_endproc
+.LFE1886:
+	.size	_Z4funcv, .-_Z4funcv
+	.section	.rodata._ZNSt6vectorIiSaIiEE17_M_realloc_insertIJRKiEEEvN9__gnu_cxx17__normal_iteratorIPiS1_EEDpOT_.str1.1,"aMS",@progbits,1
+.LC3:
+	.string	"vector::_M_realloc_insert"
+	.section	.text._ZNSt6vectorIiSaIiEE17_M_realloc_insertIJRKiEEEvN9__gnu_cxx17__normal_iteratorIPiS1_EEDpOT_,"axG",@progbits,_ZNSt6vectorIiSaIiEE17_M_realloc_insertIJRKiEEEvN9__gnu_cxx17__normal_iteratorIPiS1_EEDpOT_,comdat
+	.align 2
+	.p2align 4
+	.weak	_ZNSt6vectorIiSaIiEE17_M_realloc_insertIJRKiEEEvN9__gnu_cxx17__normal_iteratorIPiS1_EEDpOT_
+	.type	_ZNSt6vectorIiSaIiEE17_M_realloc_insertIJRKiEEEvN9__gnu_cxx17__normal_iteratorIPiS1_EEDpOT_, @function
+_ZNSt6vectorIiSaIiEE17_M_realloc_insertIJRKiEEEvN9__gnu_cxx17__normal_iteratorIPiS1_EEDpOT_:
+.LFB2208:
+	.cfi_startproc
+	endbr64	
+# /usr/include/c++/9/bits/stl_vector.h:1755: 	if (max_size() - size() < __n)
+	movabsq	$2305843009213693951, %rcx	#, tmp117
+# /usr/include/c++/9/bits/vector.tcc:426:       vector<_Tp, _Alloc>::
+	pushq	%r15	#
+	.cfi_def_cfa_offset 16
+	.cfi_offset 15, -16
+	pushq	%r14	#
+	.cfi_def_cfa_offset 24
+	.cfi_offset 14, -24
+	pushq	%r13	#
+	.cfi_def_cfa_offset 32
+	.cfi_offset 13, -32
+	pushq	%r12	#
+	.cfi_def_cfa_offset 40
+	.cfi_offset 12, -40
+	pushq	%rbp	#
+	.cfi_def_cfa_offset 48
+	.cfi_offset 6, -48
+	pushq	%rbx	#
+	.cfi_def_cfa_offset 56
+	.cfi_offset 3, -56
+	subq	$24, %rsp	#,
+	.cfi_def_cfa_offset 80
+# /usr/include/c++/9/bits/stl_vector.h:1755: 	if (max_size() - size() < __n)
+	movq	8(%rdi), %r12	# MEM[(int * *)this_14(D) + 8B], _44
+	movq	(%rdi), %r8	# MEM[(int * *)this_14(D)], _43
+# /usr/include/c++/9/bits/stl_vector.h:916:       { return size_type(this->_M_impl._M_finish - this->_M_impl._M_start); }
+	movq	%r12, %rax	# _44, tmp115
+	subq	%r8, %rax	# _43, tmp115
+	sarq	$2, %rax	#, tmp116
+# /usr/include/c++/9/bits/stl_vector.h:1755: 	if (max_size() - size() < __n)
+	cmpq	%rcx, %rax	# tmp117, tmp116
+	je	.L42	#,
+	movq	%rdx, %r15	# tmp132, __args#0
+	movq	%rsi, %rdx	# __position, _81
+	movq	%rdi, %rbp	# tmp130, this
+	movq	%rsi, %r13	# tmp131, __position
+	subq	%r8, %rdx	# _43, _81
+# /usr/include/c++/9/bits/stl_algobase.h:227:       if (__a < __b)
+	testq	%rax, %rax	# tmp116
+	je	.L38	#,
+	movabsq	$9223372036854775804, %r14	#, prephitmp_18
+# /usr/include/c++/9/bits/stl_vector.h:1758: 	const size_type __len = size() + (std::max)(size(), __n);
+	leaq	(%rax,%rax), %rsi	#, __len
+# /usr/include/c++/9/bits/stl_vector.h:1759: 	return (__len < size() || __len > max_size()) ? max_size() : __len;
+	cmpq	%rsi, %rax	# __len, tmp116
+	jbe	.L43	#,
+.L30:
+# /usr/include/c++/9/ext/new_allocator.h:114: 	return static_cast<_Tp*>(::operator new(__n * sizeof(_Tp)));
+	movq	%r14, %rdi	# prephitmp_18,
+	movq	%rdx, 8(%rsp)	# _81, %sfp
+	movq	%r8, (%rsp)	# _43, %sfp
+	call	_Znwm@PLT	#
+	movq	(%rsp), %r8	# %sfp, _43
+	movq	8(%rsp), %rdx	# %sfp, _81
+	movq	%rax, %rbx	# tmp133, _41
+	addq	%rax, %r14	# _41, _78
+.L37:
+	movl	(%r15), %eax	# *__args#0_22(D), *__args#0_22(D)
+	subq	%r13, %r12	# __position, _70
+	leaq	4(%rbx,%rdx), %r15	#, _72
+	movl	%eax, (%rbx,%rdx)	# *__args#0_22(D), *_2
+	leaq	(%r15,%r12), %rax	#, _88
+	movq	%rax, (%rsp)	# _88, %sfp
+# /usr/include/c++/9/bits/stl_uninitialized.h:928:       if (__count > 0)
+	testq	%rdx, %rdx	# _81
+	jg	.L44	#,
+	testq	%r12, %r12	# _70
+	jg	.L33	#,
+# /usr/include/c++/9/bits/stl_vector.h:350: 	if (__p)
+	testq	%r8, %r8	# _43
+	jne	.L36	#,
+.L34:
+# /usr/include/c++/9/bits/vector.tcc:502:       this->_M_impl._M_start = __new_start;
+	movq	%rbx, %xmm0	# _41, tmp125
+# /usr/include/c++/9/bits/vector.tcc:504:       this->_M_impl._M_end_of_storage = __new_start + __len;
+	movq	%r14, 16(%rbp)	# _78, this_14(D)->D.38781._M_impl.D.38081._M_end_of_storage
+# /usr/include/c++/9/bits/vector.tcc:502:       this->_M_impl._M_start = __new_start;
+	movhps	(%rsp), %xmm0	# %sfp, tmp125
+	movups	%xmm0, 0(%rbp)	# tmp125, MEM[(int * *)this_14(D)]
+# /usr/include/c++/9/bits/vector.tcc:505:     }
+	addq	$24, %rsp	#,
+	.cfi_remember_state
+	.cfi_def_cfa_offset 56
+	popq	%rbx	#
+	.cfi_def_cfa_offset 48
+	popq	%rbp	#
+	.cfi_def_cfa_offset 40
+	popq	%r12	#
+	.cfi_def_cfa_offset 32
+	popq	%r13	#
+	.cfi_def_cfa_offset 24
+	popq	%r14	#
+	.cfi_def_cfa_offset 16
+	popq	%r15	#
+	.cfi_def_cfa_offset 8
+	ret	
+	.p2align 4,,10
+	.p2align 3
+.L44:
+	.cfi_restore_state
+# /usr/include/c++/9/bits/stl_uninitialized.h:929: 	__builtin_memmove(__result, __first, __count * sizeof(_Tp));
+	movq	%r8, %rsi	# _43,
+	movq	%rbx, %rdi	# _41,
+	movq	%r8, 8(%rsp)	# _43, %sfp
+	call	memmove@PLT	#
+# /usr/include/c++/9/bits/stl_uninitialized.h:928:       if (__count > 0)
+	testq	%r12, %r12	# _70
+	movq	8(%rsp), %r8	# %sfp, _43
+	jg	.L33	#,
+.L36:
+# /usr/include/c++/9/ext/new_allocator.h:128: 	::operator delete(__p);
+	movq	%r8, %rdi	# _43,
+	call	_ZdlPv@PLT	#
+# /usr/include/c++/9/bits/alloc_traits.h:469:       { __a.deallocate(__p, __n); }
+	jmp	.L34	#
+	.p2align 4,,10
+	.p2align 3
+.L43:
+# /usr/include/c++/9/bits/stl_vector.h:343: 	return __n != 0 ? _Tr::allocate(_M_impl, __n) : pointer();
+	testq	%rsi, %rsi	# __len
+	jne	.L31	#,
+	xorl	%r14d, %r14d	# _78
+	xorl	%ebx, %ebx	# _41
+	jmp	.L37	#
+	.p2align 4,,10
+	.p2align 3
+.L33:
+# /usr/include/c++/9/bits/stl_uninitialized.h:929: 	__builtin_memmove(__result, __first, __count * sizeof(_Tp));
+	movq	%r12, %rdx	# _70,
+	movq	%r13, %rsi	# __position,
+	movq	%r15, %rdi	# _72,
+	movq	%r8, 8(%rsp)	# _43, %sfp
+	call	memcpy@PLT	#
+	movq	8(%rsp), %r8	# %sfp, _43
+# /usr/include/c++/9/bits/stl_vector.h:350: 	if (__p)
+	testq	%r8, %r8	# _43
+	je	.L34	#,
+	jmp	.L36	#
+	.p2align 4,,10
+	.p2align 3
+.L38:
+	movl	$4, %r14d	#, prephitmp_18
+	jmp	.L30	#
+.L42:
+# /usr/include/c++/9/bits/stl_vector.h:1756: 	  __throw_length_error(__N(__s));
+	leaq	.LC3(%rip), %rdi	#,
+	call	_ZSt20__throw_length_errorPKc@PLT	#
+.L31:
+	cmpq	%rcx, %rsi	# tmp117, __len
+	cmovbe	%rsi, %rcx	# __len,, tmp117
+	movq	%rcx, %r14	# tmp117, tmp126
+	salq	$2, %r14	#, prephitmp_18
+	jmp	.L30	#
+	.cfi_endproc
+.LFE2208:
+	.size	_ZNSt6vectorIiSaIiEE17_M_realloc_insertIJRKiEEEvN9__gnu_cxx17__normal_iteratorIPiS1_EEDpOT_, .-_ZNSt6vectorIiSaIiEE17_M_realloc_insertIJRKiEEEvN9__gnu_cxx17__normal_iteratorIPiS1_EEDpOT_
+	.section	.text.unlikely,"ax",@progbits
+.LCOLDB4:
+	.text
+.LHOTB4:
+	.p2align 4
+	.globl	_Z10vectorFuncv
+	.type	_Z10vectorFuncv, @function
+_Z10vectorFuncv:
+.LFB1867:
+	.cfi_startproc
+	.cfi_personality 0x9b,DW.ref.__gxx_personality_v0
+	.cfi_lsda 0x1b,.LLSDA1867
+	endbr64	
+	pushq	%r12	#
+	.cfi_def_cfa_offset 16
+	.cfi_offset 12, -16
+# /usr/include/c++/9/bits/stl_vector.h:95: 	: _M_start(), _M_finish(), _M_end_of_storage()
+	pxor	%xmm0, %xmm0	# tmp129
+# container.cpp:8:     for (int i = 0; i < 100 ; ++i)
+	xorl	%edx, %edx	# pretmp_81
+	xorl	%esi, %esi	# prephitmp_80
+# container.cpp:6: {
+	subq	$48, %rsp	#,
+	.cfi_def_cfa_offset 64
+# container.cpp:6: {
+	movq	%fs:40, %rax	# MEM[(<address-space-1> long unsigned int *)40B], tmp174
+	movq	%rax, 40(%rsp)	# tmp174, D.44809
+	xorl	%eax, %eax	# tmp174
+# /usr/include/c++/9/bits/stl_vector.h:1195: 	  _M_realloc_insert(end(), __x);
+	leaq	12(%rsp), %r12	#, tmp172
+# container.cpp:8:     for (int i = 0; i < 100 ; ++i)
+	movl	$0, 12(%rsp)	#, i
+# /usr/include/c++/9/bits/stl_vector.h:95: 	: _M_start(), _M_finish(), _M_end_of_storage()
+	movq	$0, 32(%rsp)	#, MEM[(struct _Vector_impl_data *)&arr]._M_end_of_storage
+	movaps	%xmm0, 16(%rsp)	# tmp129, MEM[(int * *)&arr]
+	jmp	.L49	#
+	.p2align 4,,10
+	.p2align 3
+.L77:
+	movl	%eax, (%rsi)	# _3, *prephitmp_80
+# container.cpp:8:     for (int i = 0; i < 100 ; ++i)
+	movl	12(%rsp), %eax	# i, tmp176
+# /usr/include/c++/9/bits/stl_vector.h:1191: 	    ++this->_M_impl._M_finish;
+	addq	$4, %rsi	#, prephitmp_80
+	movq	%rsi, 24(%rsp)	# prephitmp_80, arr.D.38781._M_impl.D.38081._M_finish
+# container.cpp:8:     for (int i = 0; i < 100 ; ++i)
+	addl	$1, %eax	#, _3
+	movl	%eax, 12(%rsp)	# _3, i
+# container.cpp:8:     for (int i = 0; i < 100 ; ++i)
+	cmpl	$99, %eax	#, _3
+	jg	.L48	#,
+.L78:
+	movq	32(%rsp), %rdx	# arr.D.38781._M_impl.D.38081._M_end_of_storage, pretmp_81
+.L49:
+# /usr/include/c++/9/bits/stl_vector.h:1186: 	if (this->_M_impl._M_finish != this->_M_impl._M_end_of_storage)
+	cmpq	%rdx, %rsi	# pretmp_81, prephitmp_80
+	jne	.L77	#,
+# /usr/include/c++/9/bits/stl_vector.h:1195: 	  _M_realloc_insert(end(), __x);
+	leaq	16(%rsp), %rdi	#, tmp131
+	movq	%r12, %rdx	# tmp172,
+.LEHB0:
+	call	_ZNSt6vectorIiSaIiEE17_M_realloc_insertIJRKiEEEvN9__gnu_cxx17__normal_iteratorIPiS1_EEDpOT_	#
+.LEHE0:
+# container.cpp:8:     for (int i = 0; i < 100 ; ++i)
+	movl	12(%rsp), %eax	# i, tmp176
+	movq	24(%rsp), %rsi	# MEM[(int * const &)&arr + 8], prephitmp_80
+	addl	$1, %eax	#, _3
+	movl	%eax, 12(%rsp)	# _3, i
+# container.cpp:8:     for (int i = 0; i < 100 ; ++i)
+	cmpl	$99, %eax	#, _3
+	jle	.L78	#,
+	.p2align 4,,10
+	.p2align 3
+.L48:
+# /usr/include/c++/9/bits/stl_iterator.h:804:       : _M_current(__i) { }
+	movq	16(%rsp), %rdi	# MEM[(int * const &)&arr], _30
+# /usr/include/c++/9/bits/stl_iterator.h:989:     { return __lhs.base() - __rhs.base(); }
+	movq	%rsi, %rdx	# prephitmp_80, tmp133
+# /usr/include/c++/9/numeric:269: 	  while ((__last - __first) >= 4)
+	xorl	%r12d, %r12d	# <retval>
+# /usr/include/c++/9/bits/stl_iterator.h:989:     { return __lhs.base() - __rhs.base(); }
+	subq	%rdi, %rdx	# _30, tmp133
+# /usr/include/c++/9/bits/stl_iterator.h:804:       : _M_current(__i) { }
+	movq	%rdi, %rax	# _30, __first$_M_current
+# /usr/include/c++/9/numeric:269: 	  while ((__last - __first) >= 4)
+	cmpq	$12, %rdx	#, tmp133
+	jle	.L53	#,
+	.p2align 4,,10
+	.p2align 3
+.L50:
+# /usr/include/c++/9/bits/stl_function.h:238: 	{ return std::forward<_Tp>(__t) + std::forward<_Up>(__u); }
+	movl	4(%rax), %edx	# MEM[base: __first$_M_current_57, offset: 4], MEM[base: __first$_M_current_57, offset: 4]
+	movl	12(%rax), %ecx	# MEM[base: __first$_M_current_57, offset: 12], MEM[base: __first$_M_current_57, offset: 12]
+# /usr/include/c++/9/bits/stl_iterator.h:853:       { _M_current += __n; return *this; }
+	addq	$16, %rax	#, __first$_M_current
+# /usr/include/c++/9/bits/stl_function.h:238: 	{ return std::forward<_Tp>(__t) + std::forward<_Up>(__u); }
+	addl	-16(%rax), %edx	# MEM[base: __first$_M_current_57, offset: 0], tmp134
+	addl	-8(%rax), %ecx	# MEM[base: __first$_M_current_57, offset: 8], tmp137
+	addl	%ecx, %edx	# tmp137, tmp140
+	addl	%edx, %r12d	# tmp140, <retval>
+# /usr/include/c++/9/bits/stl_iterator.h:989:     { return __lhs.base() - __rhs.base(); }
+	movq	%rsi, %rdx	# prephitmp_80, tmp141
+	subq	%rax, %rdx	# __first$_M_current, tmp141
+# /usr/include/c++/9/numeric:269: 	  while ((__last - __first) >= 4)
+	cmpq	$12, %rdx	#, tmp141
+	jg	.L50	#,
+.L53:
+# /usr/include/c++/9/numeric:278:       for (; __first != __last; ++__first)
+	cmpq	%rsi, %rax	# prephitmp_80, __first$_M_current
+	je	.L52	#,
+	leaq	-4(%rsi), %rcx	#, tmp142
+	movq	%rax, %rdx	# __first$_M_current, ivtmp.207
+	movabsq	$4611686018427387900, %r9	#, tmp145
+	subq	%rax, %rcx	# __first$_M_current, tmp143
+	shrq	$2, %rcx	#, _72
+	leaq	1(%rcx), %r8	#, niters.191
+	testq	%r9, %rcx	# tmp145, _72
+	je	.L54	#,
+	movq	%r8, %rcx	# niters.191, bnd.192
+	pxor	%xmm0, %xmm0	# vect__28.199
+	shrq	$2, %rcx	#, bnd.192
+	salq	$4, %rcx	#, tmp147
+	addq	%rax, %rcx	# __first$_M_current, _110
+	.p2align 4,,10
+	.p2align 3
+.L55:
+# /usr/include/c++/9/bits/stl_function.h:238: 	{ return std::forward<_Tp>(__t) + std::forward<_Up>(__u); }
+	movdqu	(%rdx), %xmm2	# MEM[base: _107, offset: 0], tmp180
+	addq	$16, %rdx	#, ivtmp.207
+	paddd	%xmm2, %xmm0	# tmp180, vect__28.199
+	cmpq	%rcx, %rdx	# _110, ivtmp.207
+	jne	.L55	#,
+	movdqa	%xmm0, %xmm1	# vect__28.199, tmp149
+	psrldq	$8, %xmm1	#, tmp149
+	paddd	%xmm1, %xmm0	# tmp149, vect__28.201
+	movdqa	%xmm0, %xmm1	# vect__28.201, tmp150
+	psrldq	$4, %xmm1	#, tmp150
+	paddd	%xmm1, %xmm0	# tmp150, vect__28.201
+	movd	%xmm0, %edx	# vect__28.201, stmp__28.200
+	addl	%edx, %r12d	# stmp__28.200, <retval>
+	movq	%r8, %rdx	# niters.191, niters_vector_mult_vf.193
+	andq	$-4, %rdx	#, niters_vector_mult_vf.193
+	leaq	(%rax,%rdx,4), %rax	#, __first$_M_current
+	cmpq	%r8, %rdx	# niters.191, niters_vector_mult_vf.193
+	je	.L52	#,
+.L54:
+# /usr/include/c++/9/bits/stl_iterator.h:826: 	++_M_current;
+	leaq	4(%rax), %rdx	#, tmp157
+# /usr/include/c++/9/bits/stl_function.h:238: 	{ return std::forward<_Tp>(__t) + std::forward<_Up>(__u); }
+	addl	(%rax), %r12d	# *__first$_M_current_25, <retval>
+# /usr/include/c++/9/numeric:278:       for (; __first != __last; ++__first)
+	cmpq	%rdx, %rsi	# tmp157, prephitmp_80
+	je	.L52	#,
+# /usr/include/c++/9/bits/stl_iterator.h:826: 	++_M_current;
+	leaq	8(%rax), %rdx	#, tmp161
+# /usr/include/c++/9/bits/stl_function.h:238: 	{ return std::forward<_Tp>(__t) + std::forward<_Up>(__u); }
+	addl	4(%rax), %r12d	# MEM[(int &)__first$_M_current_25 + 4], <retval>
+# /usr/include/c++/9/numeric:278:       for (; __first != __last; ++__first)
+	cmpq	%rdx, %rsi	# tmp161, prephitmp_80
+	je	.L52	#,
+# /usr/include/c++/9/bits/stl_iterator.h:826: 	++_M_current;
+	leaq	12(%rax), %rdx	#, tmp165
+# /usr/include/c++/9/bits/stl_function.h:238: 	{ return std::forward<_Tp>(__t) + std::forward<_Up>(__u); }
+	addl	8(%rax), %r12d	# MEM[(int &)__first$_M_current_25 + 8], <retval>
+# /usr/include/c++/9/numeric:278:       for (; __first != __last; ++__first)
+	cmpq	%rdx, %rsi	# tmp165, prephitmp_80
+	je	.L52	#,
+# /usr/include/c++/9/bits/stl_function.h:238: 	{ return std::forward<_Tp>(__t) + std::forward<_Up>(__u); }
+	addl	12(%rax), %r12d	# MEM[(int &)__first$_M_current_25 + 12], <retval>
+.L52:
+# /usr/include/c++/9/bits/stl_vector.h:350: 	if (__p)
+	testq	%rdi, %rdi	# _30
+	je	.L45	#,
+# /usr/include/c++/9/ext/new_allocator.h:128: 	::operator delete(__p);
+	call	_ZdlPv@PLT	#
+.L45:
+# container.cpp:13: }
+	movq	40(%rsp), %rax	# D.44809, tmp175
+	xorq	%fs:40, %rax	# MEM[(<address-space-1> long unsigned int *)40B], tmp175
+	jne	.L79	#,
+	addq	$48, %rsp	#,
+	.cfi_remember_state
+	.cfi_def_cfa_offset 16
+	movl	%r12d, %eax	# <retval>,
+	popq	%r12	#
+	.cfi_def_cfa_offset 8
+	ret	
+.L79:
+	.cfi_restore_state
+	call	__stack_chk_fail@PLT	#
+.L63:
+	endbr64	
+	movq	%rax, %r12	# tmp173, tmp170
+	jmp	.L59	#
+	.globl	__gxx_personality_v0
+	.section	.gcc_except_table,"a",@progbits
+.LLSDA1867:
+	.byte	0xff
+	.byte	0xff
+	.byte	0x1
+	.uleb128 .LLSDACSE1867-.LLSDACSB1867
+.LLSDACSB1867:
+	.uleb128 .LEHB0-.LFB1867
+	.uleb128 .LEHE0-.LEHB0
+	.uleb128 .L63-.LFB1867
+	.uleb128 0
+.LLSDACSE1867:
+	.text
+	.cfi_endproc
+	.section	.text.unlikely
+	.cfi_startproc
+	.cfi_personality 0x9b,DW.ref.__gxx_personality_v0
+	.cfi_lsda 0x1b,.LLSDAC1867
+	.type	_Z10vectorFuncv.cold, @function
+_Z10vectorFuncv.cold:
+.LFSB1867:
+.L59:
+	.cfi_def_cfa_offset 64
+	.cfi_offset 12, -16
+# /usr/include/c++/9/bits/stl_vector.h:677: 	std::_Destroy(this->_M_impl._M_start, this->_M_impl._M_finish,
+	movq	16(%rsp), %rdi	# arr.D.38781._M_impl.D.38081._M_start, _32
+# /usr/include/c++/9/bits/stl_vector.h:350: 	if (__p)
+	testq	%rdi, %rdi	# _32
+	je	.L60	#,
+# /usr/include/c++/9/ext/new_allocator.h:128: 	::operator delete(__p);
+	call	_ZdlPv@PLT	#
+.L60:
+	movq	%r12, %rdi	# tmp170,
+.LEHB1:
+	call	_Unwind_Resume@PLT	#
+.LEHE1:
+	.cfi_endproc
+.LFE1867:
+	.section	.gcc_except_table
+.LLSDAC1867:
+	.byte	0xff
+	.byte	0xff
+	.byte	0x1
+	.uleb128 .LLSDACSEC1867-.LLSDACSBC1867
+.LLSDACSBC1867:
+	.uleb128 .LEHB1-.LCOLDB4
+	.uleb128 .LEHE1-.LEHB1
+	.uleb128 0
+	.uleb128 0
+.LLSDACSEC1867:
+	.section	.text.unlikely
+	.text
+	.size	_Z10vectorFuncv, .-_Z10vectorFuncv
+	.section	.text.unlikely
+	.size	_Z10vectorFuncv.cold, .-_Z10vectorFuncv.cold
+.LCOLDE4:
+	.text
+.LHOTE4:
+	.section	.rodata.cst16,"aM",@progbits,16
+	.align 16
+.LC0:
+	.long	0
+	.long	1
+	.long	2
+	.long	3
+	.align 16
+.LC1:
+	.long	4
+	.long	4
+	.long	4
+	.long	4
+	.align 16
+.LC2:
+	.long	4
+	.long	5
+	.long	6
+	.long	7
+	.hidden	DW.ref.__gxx_personality_v0
+	.weak	DW.ref.__gxx_personality_v0
+	.section	.data.rel.local.DW.ref.__gxx_personality_v0,"awG",@progbits,DW.ref.__gxx_personality_v0,comdat
+	.align 8
+	.type	DW.ref.__gxx_personality_v0, @object
+	.size	DW.ref.__gxx_personality_v0, 8
+DW.ref.__gxx_personality_v0:
+	.quad	__gxx_personality_v0
+	.ident	"GCC: (Ubuntu 9.4.0-1ubuntu1~20.04.1) 9.4.0"
+	.section	.note.GNU-stack,"",@progbits
+	.section	.note.gnu.property,"a"
+	.align 8
+	.long	 1f - 0f
+	.long	 4f - 1f
+	.long	 5
+0:
+	.string	 "GNU"
+1:
+	.align 8
+	.long	 0xc0000002
+	.long	 3f - 2f
+2:
+	.long	 0x3
+3:
+	.align 8
+4:
