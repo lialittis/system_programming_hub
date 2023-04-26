@@ -98,7 +98,7 @@ Note: sleep 10 is a dummy command to set the duration
 - Tracepoints
 - Dynamic tracing
 
-[!./perf_events_map.png](Linux perf_events Event Sources)
+![Linux perf Event Sources](!./perf_events_map.png)
 
 ### perf Scope
 
