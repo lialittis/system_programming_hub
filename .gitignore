@@ -60,3 +60,6 @@ tags
 # Permission denied
 perf.data
 perf.data.old
+
+# Congigurations
+.ycm*
