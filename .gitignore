@@ -63,3 +63,6 @@ perf.data.old
 
 # Congigurations
 .ycm*
+
+# build files
+build/
