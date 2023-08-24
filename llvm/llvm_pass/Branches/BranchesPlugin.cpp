@@ -5,7 +5,7 @@
 #include "llvm/IR/InstVisitor.h"
 #include "llvm/Passes/PassBuilder.h"
 #include "llvm/Passes/PassPlugin.h"
-#include <llvm-16/llvm/Support/Casting.h>
+#include <llvm/Support/Casting.h>
 
 #define DEBUG_TYPE "branches-plugin"
 
@@ -14,7 +14,7 @@ using namespace llvm;
 namespace {
     struct BranchesPluginPass : PassInfoMixin<BranchesPluginPass> {
         PreservedAnalyses run(Function &F, FunctionAnalysisManager &AM) {
-            errs() << "Running MyHelloPluginPass on function " << F.getName() << "\n";
+            errs() << "Running BranchesPluginPass on function " << F.getName() << "\n";
 
             for(auto &BB : F){
                 for (auto &Inst : BB) {
