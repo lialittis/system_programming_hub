@@ -1,9 +1,9 @@
 #include "llvm/IR/InstIterator.h"
-#include <llvm-16/llvm/IR/InstVisitor.h>
-#include <llvm-16/llvm/IR/Instructions.h>
-#include <llvm-16/llvm/IR/IntrinsicInst.h>
-#include <llvm-16/llvm/Passes/PassPlugin.h>
-#include <llvm-16/llvm/Support/Compiler.h>
+#include <llvm/IR/InstVisitor.h>
+#include <llvm/IR/Instructions.h>
+#include <llvm/IR/IntrinsicInst.h>
+#include <llvm/Passes/PassPlugin.h>
+#include <llvm/Support/Compiler.h>
 #include <llvm/Config/llvm-config.h>
 #include <llvm/IR/PassManager.h>
 #include "llvm/IR/InstVisitor.h"
@@ -22,6 +22,7 @@ namespace {
             PreservedAnalyses run(Function &F, FunctionAnalysisManager &AM) {
                 errs() << "Running CalleeReplacePluginPass on function " << F.getName() << "\n";
 
+                // visitor pattern
                 this->visit(F);
                 
                 // simple and direct approach of replacing function
@@ -64,8 +65,11 @@ namespace {
                 //CallInst *myMallocCall = Builder.CreateCall(FaultyMalloc, {sizeArg});
                 CallInst *myMallocCall = Builder.CreateCall(MallocFn, {sizeArg});
                 CI->replaceAllUsesWith(myMallocCall);
-                CI->eraseFromParent(); // Question here[TODO]: why segmentation fault if I try to do similar steps in the direct way of 
+                CI->eraseFromParent(); // Question here: why segmentation fault if I try to do similar steps in the direct way of 
                                        // squence reading/writing instead of visitor pattern
+                                       // Answer : if you want to erase the instructions, you have to wait until the end of the 
+                                       // loop of the instructions, otherwise there could be issues
+                                       // TODO : remember to add the note into my blog/post
             }
     };
 }// namespace
