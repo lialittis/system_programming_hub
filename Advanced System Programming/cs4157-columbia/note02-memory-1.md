@@ -1,5 +1,8 @@
 # Introduction to Memory Allocators
 
+> **IMPORTANT!** Note that, the below notes are taken from the references, they are only for educational purposes and will not ever 
+> be used for commercial usage, please respect the original content creators. 
+
 ## Process Memory Address Space
 
 Recall the 32-bit virtual address space of a process:
@@ -120,6 +123,3 @@ void *malloc(size_t size) {
 
 - [02-memory-1](https://cs4157.github.io/www/2024-1/lect/02-memory-1.html)
 - [CSAPP](./[Book]Computer Systems; A Programmer's Perspective - Randal E. Bryant & David R. O'Hallaron.pdf)
-
-> **IMPORTANT!** Note that, the above notes are taken from the references, they are only for educational purposes and will not ever 
-> be used for commercial usage, please respect the original content creators. 
