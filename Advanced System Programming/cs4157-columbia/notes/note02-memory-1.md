@@ -41,6 +41,8 @@ requested).
 In contrast, if the memory is spread out into smaller pieces, making the allocator unable to satisfy larger requests,
 it is called *external fragmentation*. 
 
+## Implicit Free List
+
 ### Block Structure
 
 "Any practical allocator needs some data structure that allows it to distinguish block boundaries and to distinguish
@@ -48,7 +50,7 @@ between allocated and free blocks."
 
 Look at this example of a simple heap block structure for 32-bit systems:
 
-![block-structure](./02-fig-9.35.png)
+![block-structure](./images/02-fig-9.35.png)
 
 It embeds the information in the blocks themselves. Since we impose a double-word (8-byte for 32-bit systems) alignment
 constraint, thus the 3 low-order bits of the block size (header) are always zero. Then we could use the least significant
@@ -58,7 +60,7 @@ By this way, **an implicit free list** organizes the heap. Its advantage is simp
 is that the cost of any operation requires a search of the free list, which is linear in the total number of allocated
 and free blocks in the heap.
 
-![imp-free-list](./02-fig-9.36.png)
+![imp-free-list](./images/02-fig-9.36.png)
 
 Note that, there are 4 bytes of padding at the beginning of the heap, ensuring the first block's payload is at an 8-byte
 boundary, and there is a special "epilogue" block at the end of the heap with size 0, which the textbook's implementation
@@ -118,8 +120,29 @@ void *malloc(size_t size) {
 ```
 
 
+### Coalescing Free Blocks
+
+If a call of `free()` only deallocates the corresponding space, it might cause **false fragmentation**.
+
+Given an example in the following picture, a call to `malloc(20)` would fail even though there is enough space.
+
+![false-fragmentation](./images/02-fig-9.38.png)
+
+One of the solutions is duplicating a block's header at the end of the block. This footer works as a "boundary tag" and helps
+us to traverse backwards in the free list.
+
+![footer](./images/02-fig-9.39.png)
+
+
+
+## From Implicit to Explicit
+
+Actually, we could take advantage of the fact that a free block's payload is unused by repurposing it to store explicit pointers to the prev/next free blocks.
+
+![explicit](./images/02-fig-9.48.png)
+
 
 ## Reference
 
 - [02-memory-1](https://cs4157.github.io/www/2024-1/lect/02-memory-1.html)
-- [CSAPP](./[Book]Computer Systems; A Programmer's Perspective - Randal E. Bryant & David R. O'Hallaron.pdf)
+- [CSAPP](./materials/[Book]Computer\ Systems;\ A\ Programmer's\ Perspective\ -\ Randal\ E.\ Bryant\ &\ David\ R.\ O'Hallaron.pdf)
