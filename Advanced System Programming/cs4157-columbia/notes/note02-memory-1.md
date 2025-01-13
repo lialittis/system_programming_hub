@@ -134,7 +134,6 @@ us to traverse backwards in the free list.
 ![footer](./images/02-fig-9.39.png)
 
 
-
 ## From Implicit to Explicit
 
 Actually, we could take advantage of the fact that a free block's payload is unused by repurposing it to store explicit pointers to the prev/next free blocks.
