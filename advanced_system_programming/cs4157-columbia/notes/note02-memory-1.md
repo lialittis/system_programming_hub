@@ -15,7 +15,7 @@ Recall the 32-bit virtual address space of a process:
 
 This picture helps you better understand the concepts above:
 
-![proc-mem-layout](./02-proc-mem-layout.png)
+![proc-mem-layout](../images/02-proc-mem-layout.png)
 
 We use `brk()` system call to change the program break, by increasing the program break to allocate memory and
 decreasing the program break to deallocate memory.
@@ -50,7 +50,7 @@ between allocated and free blocks."
 
 Look at this example of a simple heap block structure for 32-bit systems:
 
-![block-structure](./images/02-fig-9.35.png)
+![block-structure](../images/02-fig-9.35.png)
 
 It embeds the information in the blocks themselves. Since we impose a double-word (8-byte for 32-bit systems) alignment
 constraint, thus the 3 low-order bits of the block size (header) are always zero. Then we could use the least significant
@@ -60,7 +60,7 @@ By this way, **an implicit free list** organizes the heap. Its advantage is simp
 is that the cost of any operation requires a search of the free list, which is linear in the total number of allocated
 and free blocks in the heap.
 
-![imp-free-list](./images/02-fig-9.36.png)
+![imp-free-list](../images/02-fig-9.36.png)
 
 Note that, there are 4 bytes of padding at the beginning of the heap, ensuring the first block's payload is at an 8-byte
 boundary, and there is a special "epilogue" block at the end of the heap with size 0, which the textbook's implementation
@@ -126,22 +126,22 @@ If a call of `free()` only deallocates the corresponding space, it might cause *
 
 Given an example in the following picture, a call to `malloc(20)` would fail even though there is enough space.
 
-![false-fragmentation](./images/02-fig-9.38.png)
+![false-fragmentation](../images/02-fig-9.38.png)
 
 One of the solutions is duplicating a block's header at the end of the block. This footer works as a "boundary tag" and helps
 us to traverse backwards in the free list.
 
-![footer](./images/02-fig-9.39.png)
+![footer](../images/02-fig-9.39.png)
 
 
 ## From Implicit to Explicit
 
 Actually, we could take advantage of the fact that a free block's payload is unused by repurposing it to store explicit pointers to the prev/next free blocks.
 
-![explicit](./images/02-fig-9.48.png)
+![explicit](../images/02-fig-9.48.png)
 
 
 ## Reference
 
 - [02-memory-1](https://cs4157.github.io/www/2024-1/lect/02-memory-1.html)
-- [CSAPP](./materials/[Book]Computer\ Systems;\ A\ Programmer's\ Perspective\ -\ Randal\ E.\ Bryant\ &\ David\ R.\ O'Hallaron.pdf)
+- [CSAPP](../materials/[Book]Computer\ Systems;\ A\ Programmer's\ Perspective\ -\ Randal\ E.\ Bryant\ &\ David\ R.\ O'Hallaron.pdf)
