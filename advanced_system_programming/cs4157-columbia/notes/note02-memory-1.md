@@ -144,4 +144,4 @@ Actually, we could take advantage of the fact that a free block's payload is unu
 ## Reference
 
 - [02-memory-1](https://cs4157.github.io/www/2024-1/lect/02-memory-1.html)
-- [CSAPP](../materials/[Book]Computer\ Systems;\ A\ Programmer's\ Perspective\ -\ Randal\ E.\ Bryant\ &\ David\ R.\ O'Hallaron.pdf)
+- [CSAPP](../materials/%5BBook%5DComputer%20Systems%3B%20A%20Programmer's%20Perspective%20-%20Randal%20E.%20Bryant%20%26%20David%20R.%20O'Hallaron.pdf)
