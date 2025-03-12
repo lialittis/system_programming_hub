@@ -40,6 +40,4 @@
     - Analogous to human translation
 
 The overall structure of almost every compiler adheres to this outline, but the proportions have
-changed since FORTRAN.
-
-  
+changed since FORTRAN.  
